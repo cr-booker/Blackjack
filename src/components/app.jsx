@@ -19,6 +19,7 @@ export default function App(){
   const [winnerDialogIsOpen, setWinnerDialogIsOpen] = React.useState(false)
   const [winnerMessage, setWinnerMessage] = React.useState("")
   const [disableGameBtns, setDisableGameBtns] = React.useState(false)
+  const [showDealBtn, setShowDealBtn] = React.useState(true)
  
   const deckIdRef = React.useRef("");
   const playerHandTotal = calculateHand(playerHand)
@@ -67,7 +68,7 @@ export default function App(){
     if (playerStands && dealerHandTotal < 17){
         setTimeout(addCard,500, setDealerHand);
     }
-    else{
+    else if(playerStands && dealerHandTotal >= 17){
       setDealerStands(true)
     }
   },[playerStands ,dealerHandTotal])
@@ -83,7 +84,7 @@ export default function App(){
       }
     }
 
-    if (dealerStands && dealerHandTotal >= 17){
+    if (dealerStands){
       if (dealerHandTotal <= 21){
         determineWinner()
       }else{
@@ -132,12 +133,13 @@ export default function App(){
   }
     
   async function resetGame(){
-    setPlayerStands(false);
     await fetch(`https://www.deckofcardsapi.com/api/deck/${deckIdRef.current}/return/`)
     await fetch(`https://www.deckofcardsapi.com/api/deck/${deckIdRef.current}/shuffle/`)
     setPlayerHand([])
     setDealerHand([])
     setShowHoleCard(false);
+    setDealerStands(false);
+    setPlayerStands(false);
   }
 
   const playerCards = playerHand.map(card => (
@@ -159,11 +161,11 @@ export default function App(){
       suit= {index== 1 && !showHoleCard ? null :card.suit}
     />   
   ));
-    
+  
   return(
     <>
       {homeIsDisplayed && <Home
-        loadGame={() => {loadGame(false)}}
+        launchGame={() => {setHomeIsDisplayed(false)}}
       />}
       {gameIsLoading && <LoadingDialog />}
       {winnerDialogIsOpen && 
@@ -178,6 +180,8 @@ export default function App(){
       }
       {!homeIsDisplayed && 
         <Table 
+          loadGame={()=> {loadGame(); setShowDealBtn(false);}}
+          showDealBtn={showDealBtn}
           dealerCards={dealerCards}
           playerCards={playerCards}
           playerTotal={playerHandTotal}
