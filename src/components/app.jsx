@@ -56,22 +56,12 @@ export default function App(){
     checkForBlackJack(json.cards.slice(0,2), json.cards.slice(2))
   }, [checkForBlackJack])
 
-  // React.useEffect(() => {
-  //   if (show){
-  //     setTimeout(() => {
-  //       setShow(false)
-  //       loadGame(true)
-  //     }, 2000)  
-  //   }
-  // },[show, loadGame])
-
   // Player bust check
   React.useEffect(() => {
     if (playerHandTotal > 21){
       showWinnerDialog("Dealer Wins!")
     }
   }, [playerHandTotal])
-
 
   React.useEffect(() =>{
     if (playerStands && dealerHandTotal < 17){
