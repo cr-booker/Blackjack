@@ -13,7 +13,7 @@ export default function StartScreen(props){
           </h1>
         </div>
         <div className="flex-container flex-center home--btn-container">
-          <button className="home--btn home--play-btn" type="button" onClick={props.loadGame}>Play</button>
+          <button className="home--btn home--play-btn" type="button" onClick={props.launchGame}>Play</button>
           <button className="home--btn home--rules-btn" type="button" onClick={()=> {setDialogIsOpen(true)}}>Rules</button>
         </div>
         {dialogIsOpen && 
