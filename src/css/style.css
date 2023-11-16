@@ -72,6 +72,13 @@ img{
     display: grid;
 }
 
+.background{
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 .modal { 
     position: fixed;
     top: 0;
@@ -166,7 +173,6 @@ img{
 {
     height: 100vh;
     flex-direction: column;
-
 }
 
 /* Loading Dialog */
@@ -184,9 +190,7 @@ img{
 }
 
 /* Rules Dialog */
-
 .rules-dialog{
-   
     width: 40%;
     min-width: 300px;
     max-width: 550px;
@@ -219,7 +223,6 @@ img{
 .rule-text{
     margin: .7em 0;
     font-size: 1.1rem;
-
 }
 
 .rule-text--hightlight{
@@ -249,10 +252,6 @@ img{
     background-image: radial-gradient(circle at 50% 50%, 
     rgba(143, 45, 45, 0) 0%, rgba(0, 0, 0, 1) 75%), 
     url('/src/assets/home-bg.jpg');
-    width: 100%;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 .home,
@@ -296,14 +295,13 @@ img{
         0 0 92px var(--home-prim-clr),
         0 0 102px var(--home-prim-clr),
         0 0 151px var(--home-prim-clr);
-
 }
-
 
 /* Game table */
 .game-table{
     width: 100vw;
     padding: 1em;
+    background-image: url("../assets/table-bg.jpeg");
 }
 
 .game-table--hand{
