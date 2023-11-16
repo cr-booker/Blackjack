@@ -3,9 +3,9 @@ import React from "react";
 export default function Table(props){
   return (
     <main>
-      {props.showDealBtn ? <button className="deal-button" onClick={props.loadGame}>Deal</button> :
-      <div className="game-table flex-container flex-center">
-        <div className="game-table--dealer flex-container flex-center">
+      <div className="game-table background flex-container flex-center">
+        {props.showDealBtn ? <button className="deal-button" onClick={props.loadGame}>Deal</button> :
+        <><div className="game-table--dealer flex-container flex-center">
           <div className="game-table--total">{props.dealerTotal}</div>
           <div className="game-table--hand flex-container">{props.dealerCards}</div>
         </div>
@@ -16,8 +16,8 @@ export default function Table(props){
         <div className="game-table--btn-container flex-container">
           <button className="player-btn" onClick={props.handleHitBtn}>Hit Me!</button>
           <button className="player-btn" onClick={props.handleStayBtn}>Stay!</button>
-        </div> 
-      </div>} 
+        </div></>}
+      </div>
     </main>
   )
 }
