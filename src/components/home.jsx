@@ -5,7 +5,7 @@ import logo from "../assets/cards-logo.svg"
 export default function StartScreen(props){
   const [dialogIsOpen, setDialogIsOpen] = React.useState(false);
     return (
-      <div className="home background flex-container flex-center">
+      <div className="home flex-container flex-center">
         <div className="home--logo-container flex-container flex-center">
           <img className="home--logo" src={logo} alt="4 playing card suits" />
           <h1 className="home--title neon-text">
