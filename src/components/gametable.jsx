@@ -3,7 +3,7 @@ import React from "react";
 export default function Table(props){
   return (
     <main>
-      <div className="game-table background flex-container flex-center">
+      <div className="game-table flex-container flex-center">
         {props.showDealBtn ? <button className="deal-button" onClick={props.loadGame}>Deal</button> :
         <><div className="game-table--dealer flex-container flex-center">
           <div className="game-table--total">{props.dealerTotal}</div>
