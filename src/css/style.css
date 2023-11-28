@@ -276,7 +276,7 @@ img{
 	padding: .5em 1em;
 	font-size: clamp(1.85rem, 1.667rem + 0.916vw, 2.8rem);
     background: transparent;
-    transition: all .015s ease-out;
+    /* transition: all 10s ease-in; */
     color: white;
 }
 
@@ -299,7 +299,7 @@ img{
     width: 100vw;
     padding: 1em;
     background-image: radial-gradient(circle at 50% 50%, 
-    rgba(143, 45, 45, 0) 0%, rgba(0, 0, 0, 1) 100%), url("../assets/Card-Suits.png"), url("../assets/table-bg2.jpeg"); 
+    rgba(143, 45, 45, 0) 0%, rgba(0, 0, 0, 1) 100%), url("../assets/Card-Suits.png"), url("../assets/table-bg.jpeg"); 
     background-repeat: no-repeat, no-repeat no-repeat;
     background-size: cover,clamp(21.875rem, -7.143rem + 77.381vw, 62.5rem), cover;
     background-position: center, center;
@@ -311,10 +311,9 @@ img{
 	border-radius: 8px;
 	background: #8B575C;
 	color: white;
-	
-	box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.68);
-	-webkit-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.68);
-	-moz-box-shadow: 10px 10px 10px 0px rgba(0,0,0,0.68);
+	box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.68);
+	-webkit-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.68);
+	-moz-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.68);
 	background: #8b575c;
 	background: linear-gradient(180deg, rgb(139, 87, 92) 55%, rgb(75, 47, 50) 100%);
 }
