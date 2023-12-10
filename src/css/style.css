@@ -318,19 +318,23 @@ img{
 	background: linear-gradient(180deg, rgb(139, 87, 92) 55%, rgb(75, 47, 50) 100%);
 }
 
-.game-table--hand{
-    flex-wrap: wrap;
-}
-
 .game-table--dealer{
     margin-bottom: 2em;
 }
 
+.game-table--dealer .card:not(:first-child),
+.game-table--player .card:not(:first-child){
+    margin-left: -50px;
+ }
+
 .game-table--total{
     color: white;
-    font-size: 1.1rem;
-    border: 1px solid white;
-    padding: 1em ;
+    font-size: 1.55rem;
+    border: 1px dashed white;
+    padding: .6em;
+    border-radius: 100%;
+    width: clamp(2.5rem, 2.096rem + 2.0202vw, 5rem);
+    height: clamp(2.5rem, 2.096rem + 2.0202vw, 5rem);
 }
 
 .game-table--btn-container{
@@ -339,6 +343,5 @@ img{
 }
 
 .card{
-    width: clamp(5rem, 1.4844rem + 11.25vw, 7.8125rem);;
+    width: clamp(5.625rem, 4.8169rem + 4.0404vw, 10.625rem); 
 }
-
