@@ -322,14 +322,20 @@ img{
     margin-bottom: 2em;
 }
 
+.game-table--dealer,
+.game-table--player{
+    flex-direction: column-reverse;
+    gap: 10px;
+}
+
 .game-table--dealer .card:not(:first-child),
 .game-table--player .card:not(:first-child){
-    margin-left: -50px;
+    margin-left: -55px;
  }
 
 .game-table--total{
     color: white;
-    font-size: 1.55rem;
+    font-size: clamp(1.1rem, 1.003rem + 0.4848vw, 1.7rem);
     border: 1px dashed white;
     padding: .6em;
     border-radius: 100%;
