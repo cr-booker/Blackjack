@@ -39,17 +39,17 @@ export default function RulesDialog(props){
 
     <div className="rule-container" key="3">
       <p className="rule-text">
-      The player&apos;s options for playing his or her hand are:
+      The player&apos;s options for playing their hand are:
       <span className="rule-text--hightlight"><b>Hit</b>: Take another card.</span>
       <span className="rule-text--hightlight"><b>Stand</b>: Take no more cards.</span>
       </p>
       <p className="rule-text">
-      The player&apos;s turn is over after deciding to stand, doubling down to take a single card, or busting. If the player busts, he or she loses the bet even if the dealer goes on to bust.
+      The player&apos;s turn is over after deciding to stand, doubling down to take a single card, or busting.
       </p>
     </div>,
 
     <div className="rule-text-container" key="4">
-      <p className="rule-text">After all the players have finished making their decisions, the dealer then reveals his or her hidden hole card and plays the hand. </p>   
+      <p className="rule-text">After all the players have finished making their decisions, the dealer then reveals their hidden hole card and plays the hand. </p>   
     </div>
   ];
   
