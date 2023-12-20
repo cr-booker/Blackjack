@@ -13,6 +13,7 @@
     --madder-lake: #d13636;
     --orchid-pink: #f6c0d0;
     --chinese-pink: #e47c9b;
+    --amaranth-purple :#AB2541;
 
 
     --home-prim-clr: var(--steel-pink);
@@ -20,6 +21,7 @@
     --home-dialog-btn-bg: var(--orchid-pink);
     --home-dialog-btn-hover: var(--chinese-pink);
     --close-btn-hover: var(--madder-lake);
+    --game-btn-bg: var(--amaranth-purple);
 
 }
 
@@ -305,17 +307,21 @@ img{
     background-position: center, center;
 }
 
+.game-table--btn
+{
+    color: white;
+    background: var(--game-btn-bg);
+    background: linear-gradient(180deg, rgba(171,37,65,1) 55%, rgba(94,11,28,1) 100%);
+    box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.68);
+	-webkit-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.68);
+	-moz-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.68);
+}
+
 .deal-button {
 	padding: .2em 1.2em;
 	font-size: 2.2rem;
 	border-radius: 8px;
-	background: #8B575C;
-	color: white;
-	box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.68);
-	-webkit-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.68);
-	-moz-box-shadow: 10px 10px 11px 0px rgba(0,0,0,0.68);
-	background: #8b575c;
-	background: linear-gradient(180deg, rgb(139, 87, 92) 55%, rgb(75, 47, 50) 100%);
+	/* background: linear-gradient(180deg, rgb(139, 87, 92) 55%, rgb(75, 47, 50) 100%); */
 }
 
 .game-table--dealer{
@@ -330,7 +336,7 @@ img{
 
 .game-table--dealer .card:not(:first-child),
 .game-table--player .card:not(:first-child){
-    margin-left: -55px;
+    margin-left: -60px;
  }
 
 .game-table--total{
@@ -345,7 +351,20 @@ img{
 
 .game-table--btn-container{
     padding: 1em 0;
-    gap: 10px;
+    gap: 30px;
+}
+
+.player-btn{
+    border-radius: 6px;
+    font-size: 1rem;
+    width: 100px;
+    padding: .7em 0;
+    gap: 5px;
+    transition: all ease 12s;
+}
+
+.player-btn:hover{
+    background: linear-gradient(180deg, rgb(125, 21, 43) 55%, rgb(62, 5, 16)100%);
 }
 
 .card{
