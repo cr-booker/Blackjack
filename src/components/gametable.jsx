@@ -14,7 +14,7 @@ export default function Table(props){
           <div className="game-table--hand  flex-container">{props.playerCards}</div>
         </div>
         <div className="game-table--btn-container flex-container flex-center">
-          <button className="game-table--btn player-btn" onClick={props.handleStayBtn}>
+          <button className="game-table--btn player-btn flex-container flex-center" onClick={props.handleStayBtn}>
             <i className="material-icons">pan_tool</i>
             Stay!
           </button>
