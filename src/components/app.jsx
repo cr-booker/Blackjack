@@ -5,6 +5,8 @@ import Card from "./card";
 import LoadingDialog from "./loadingdialog";
 import WinnerDialog from "./winnerdialog"
 import "../css/style.css"
+import music from "../assets/sunset-vibes.mp3"
+
 
 const cardBackImg = "https://www.deckofcardsapi.com/static/img/back.png";
 
@@ -20,7 +22,10 @@ export default function App(){
   const [winnerMessage, setWinnerMessage] = React.useState("")
   const [disableGameBtns, setDisableGameBtns] = React.useState(false)
   const [showDealBtn, setShowDealBtn] = React.useState(true)
+  const [bgMusicPlaying, setBgMusicPlaying] = React.useState(false)
  
+  const bgMusic = React.useRef(new Audio(music))
+  bgMusic.current.loop = true;
   const deckIdRef = React.useRef("");
   const playerHandTotal = calculateHand(playerHand)
   const dealerHandTotal = !showHoleCard ? calculateHand(dealerHand.slice(0,1)) :calculateHand(dealerHand)
@@ -66,7 +71,7 @@ export default function App(){
 
   React.useEffect(() =>{
     if (playerStands && dealerHandTotal < 17){
-        setTimeout(addCard,500, setDealerHand);
+        setTimeout(addCard,400, setDealerHand);
     }
     else if(playerStands && dealerHandTotal >= 17){
       setDealerStands(true)
@@ -76,11 +81,11 @@ export default function App(){
   React.useEffect(() => {
     function determineWinner(){
       if (playerHandTotal > dealerHandTotal){
-        showWinnerDialog("Player Wins");
+        showWinnerDialog("Player Wins!");
       }else if(dealerHandTotal > playerHandTotal){
-        showWinnerDialog("Dealer Wins");
+        showWinnerDialog("Dealer Wins!");
       }else{
-        showWinnerDialog("Draw")
+        showWinnerDialog("Draw!")
       }
     }
 
@@ -92,6 +97,10 @@ export default function App(){
       }
     }
   },[dealerStands, dealerHandTotal, playerHandTotal])
+
+  React.useEffect(()=> {
+    bgMusicPlaying ? bgMusic.current.play() : bgMusic.current.pause();
+  }, [bgMusicPlaying])
 
   function calculateHand(hand){
     const rankValues = {
@@ -165,7 +174,7 @@ export default function App(){
   return(
     <>
       {homeIsDisplayed && <Home
-        launchGame={() => {setHomeIsDisplayed(false)}}
+        launchGame={() => {setHomeIsDisplayed(false); setBgMusicPlaying(true)}}
       />}
       {gameIsLoading && <LoadingDialog />}
       {winnerDialogIsOpen && 
