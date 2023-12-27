@@ -84,6 +84,7 @@ img{
     background: none;
     opacity: 1;
     transition: all 0.15s ease-in;
+    z-index: 1;
 }
 
 .modal.tinted{
@@ -382,6 +383,7 @@ img{
 .winner-dialog--message{
     padding: .4em 0;
     font-size: 2rem;
+    white-space: pre-line;
 }
 
 .winner-dialog--btn{
