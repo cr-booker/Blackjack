@@ -36,12 +36,12 @@ export default function App(){
     const dealerHasBlackjack = (calculateHand(dealerHand) == 21);
     if (playerHasBlackjack && dealerHasBlackjack){
       setShowHoleCard(true);
-      showWinnerDialog("Push! Double BlackJack!");
+      showWinnerDialog("Push! \nDouble BlackJack!");
     }else if (playerHasBlackjack){
-      showWinnerDialog("Blackjack! Player Wins!")
+      showWinnerDialog("Blackjack! \nPlayer Wins!")
     }else if (dealerHasBlackjack){
       setShowHoleCard(true);
-      showWinnerDialog("Blackjack! Dealer wins");
+      showWinnerDialog("Blackjack! \nDealer wins");
     }
   }, [])
 
@@ -200,6 +200,5 @@ export default function App(){
         />
       }
     </>
-  )
-    
+  ) 
 }
