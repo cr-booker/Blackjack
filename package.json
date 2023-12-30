@@ -1,7 +1,8 @@
 {
   "name": "blackjack",
   "private": true,
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "homepage": "https://cr-booker.github.io/Blackjack/",
   "type": "module",
   "scripts": {
     "dev": "vite",
