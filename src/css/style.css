@@ -44,7 +44,11 @@ h1{
 button{
     cursor: pointer;
     border: none;
+}
 
+button:disabled,
+button[disabled]{
+    cursor: wait;
 }
 
 img{
