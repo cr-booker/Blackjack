@@ -14,11 +14,11 @@ export default function Table(props){
           <div className="game-table--hand  flex-container">{props.playerCards}</div>
         </div>
         <div className="game-table--btn-container flex-container flex-center">
-          <button className="game-table--btn player-btn flex-container flex-center" onClick={props.handleStayBtn}>
+          <button className="game-table--btn player-btn flex-container flex-center" disabled={props.btnsDisabled} onClick={props.handleStayBtn}>
             <i className="material-icons">pan_tool</i>
             Stay!
           </button>
-          <button className="game-table--btn player-btn flex-container flex-center" onClick={props.handleHitBtn}>
+          <button className="game-table--btn player-btn flex-container flex-center" disabled={props.btnsDisabled} onClick={props.handleHitBtn}>
             <i className="material-icons">add_circle</i>
             Hit Me!
           </button>
