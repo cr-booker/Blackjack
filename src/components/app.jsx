@@ -139,6 +139,7 @@ export default function App(){
   function showWinnerDialog(dialogMessage){
     setWinnerMessage(dialogMessage)
     setWinnerDialogIsOpen(true)
+    setDisableGameBtns(false)
   }
     
   async function resetGame(){
@@ -197,6 +198,7 @@ export default function App(){
           dealerTotal={dealerHandTotal}
           handleHitBtn={() => {addCard(setPlayerHand)}}
           handleStayBtn={endTurn}
+          btnsDisabled={disableGameBtns}
         />
       }
     </>
